@@ -1,3 +1,5 @@
-const puppeteer = require('puppeteer');
+const path = require('path');
 
-require('./app/index')(puppeteer);
+const app = require(path.resolve(__dirname, './app/index'));
+
+app();

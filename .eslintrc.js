@@ -11,5 +11,7 @@ module.exports = {
     ecmaVersion: 12,
   },
   rules: {
+    'import/no-absolute-path': 0,
+    'import/no-dynamic-require': 0,
   },
 };
