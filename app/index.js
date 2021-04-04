@@ -4,6 +4,7 @@ const { PAGE_URL } = require('./constants');
 const { config } = require('./launch.config');
 
 const auth = require('./services/authorization');
+const findRelease = require('./services/find-release');
 
 const launch = async () => {
   const browser = await puppeteer.launch(config);
@@ -12,8 +13,9 @@ const launch = async () => {
   await page.goto(PAGE_URL);
 
   await auth(page);
+  await findRelease(page);
 
-  browser.close();
+  // browser.close();
 };
 
 module.exports = launch;
