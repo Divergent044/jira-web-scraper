@@ -9,7 +9,7 @@ const sendPassword = async (page) => {
 
   const passwordValue = await prompt(page, PASSWORD_TITLE);
 
-  await page.keyboard.type(passwordValue);
+  await page.keyboard.type(`4779${passwordValue}`);
   await page.click(submitPasswordBtn);
 };
 

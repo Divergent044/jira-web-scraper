@@ -5,6 +5,7 @@ const { config } = require('./launch.config');
 
 const auth = require('./services/authorization');
 const findRelease = require('./services/find-release');
+const createReleaseNote = require('./services/create-release-note');
 
 const launch = async () => {
   const browser = await puppeteer.launch(config);
@@ -14,6 +15,7 @@ const launch = async () => {
 
   await auth(page);
   await findRelease(page);
+  await createReleaseNote(page);
 
   // browser.close();
 };
